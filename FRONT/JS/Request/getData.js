@@ -7,9 +7,11 @@ export const getData = (searchValue) => {
 
     console.log(searchValue)
 
-    fetchData(`${url}?=${searchValue}`)
+    fetchData(`${url}?=${searchValue}`, 'GET')
         .then (data => {
-            displayData(data, 'h1')
+            if (data) {
+                displayData(data, 'h1')
+            }
         })
         .catch(error => {
             console.error(error)

@@ -1,6 +1,11 @@
-export const fetchData = async (url) => {
+export const fetchData = async (url, requestMethod) => {
     try {
-    const response = await fetch(url); // Effectue la requête GET
+    const response = await fetch(url, {
+        method: requestMethod,
+        headers: {
+            'Content-Type': 'application/json', // Si nécessaire, ajustez les en-têtes en fonction de vos besoins
+      },
+    }); // Effectue la requête GET
     if (!response.ok) {
       throw new Error(`Erreur HTTP : ${response.status}`);
     }
