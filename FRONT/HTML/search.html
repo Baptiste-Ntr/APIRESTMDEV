@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 <body>
     <div class="container-fluid">
@@ -11,7 +12,7 @@
             <div class="col-md-12">
                 <div class="page-header">
                     <h1>
-                        BibliothÃ¨que LiveCampus
+                        Bibliothèque LiveCampus
                     </h1>
                 </div>
             </div>
@@ -29,12 +30,21 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12" id="searchResult">
                 <h3>
                     Résultat de la recherche :
                 </h3>
             </div>
         </div>
     </div>
+    <script lang="javascript" type="module">
+        import {getData} from '../JS/Get/getData.js'
+
+        const button = document.querySelector('#searchButton')
+
+        button.addEventListener('click', () => {
+            getData(document.querySelector('#searchInput').value)
+        })
+    </script>
 </body>
 </html>
